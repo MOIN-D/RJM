@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RJM FASHION | Premium Fashion Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--gold:#d4af37;
+--black:#0f0f0f;
+--white:#ffffff;
+--gray:#f5f5f5;
+--dark:#171717;
+}
+
+body{
+background:var(--white);
+color:var(--black);
+overflow-x:hidden;
+}
+
+/* LOADER */
+
+.loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
+
+.loader h1{
+color:var(--gold);
+font-size:3rem;
+letter-spacing:4px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+50%{
+opacity:.4;
+transform:scale(1.1);
+}
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:2rem;
+font-weight:800;
+color:var(--gold);
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:35px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.4s;
+}
+
+nav ul li a:hover{
+color:var(--gold);
+}
+
+.icons{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.icons i{
+font-size:1.3rem;
+color:white;
+cursor:pointer;
+transition:.4s;
+}
+
+.icons i:hover{
+color:var(--gold);
+}
+
+.cart-count{
+position:absolute;
+top:-8px;
+right:-8px;
+background:red;
+width:18px;
+height:18px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:10px;
+color:white;
+}
+
+.cart-icon{
+position:relative;
+}
+
+.menu-btn{
+display:none;
+font-size:1.8rem;
+color:white;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=2000&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+color:white;
+max-width:850px;
+animation:heroUp 1.4s ease;
+}
+
+@keyframes heroUp{
+from{
+opacity:0;
+transform:translateY(60px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero-content h1{
+font-size:5rem;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:1.2rem;
+margin-bottom:35px;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+padding:16px 40px;
+background:var(--gold);
+color:black;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+margin-bottom:60px;
+font-weight:700;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.feature-box{
+padding:35px;
+text-align:center;
+background:white;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.feature-box:hover{
+transform:translateY(-10px);
+}
+
+.feature-box i{
+font-size:3rem;
+color:var(--gold);
+margin-bottom:20px;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.product:hover{
+transform:translateY(-10px);
+}
+
+.product img{
+width:100%;
+height:380px;
+object-fit:cover;
+}
+
+.product-content{
+padding:20px;
+text-align:center;
+}
+
+.product-content h3{
+margin-bottom:10px;
+}
+
+.price{
+font-size:1.4rem;
+font-weight:700;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.add-btn{
+padding:12px 25px;
+background:black;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.4s;
+}
+
+.add-btn:hover{
+background:var(--gold);
+color:black;
+}
+
+/* SALE BANNER */
+
+.sale{
+height:450px;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2000&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.sale h2{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+/* CART */
+
+.cart{
+position:fixed;
+top:0;
+right:-420px;
+width:400px;
+height:100%;
+background:white;
+box-shadow:-5px 0 20px rgba(0,0,0,.2);
+z-index:9999;
+transition:.5s;
+overflow-y:auto;
+padding:25px;
+}
+
+.cart.active{
+right:0;
+}
+
+.cart h2{
+margin-bottom:20px;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #ddd;
+}
+
+.total{
+margin-top:20px;
+font-size:1.3rem;
+font-weight:700;
+}
+
+.whatsapp-btn{
+display:block;
+width:100%;
+text-align:center;
+padding:15px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:10px;
+margin-top:20px;
+font-weight:700;
+}
+
+.close-cart{
+float:right;
+font-size:25px;
+cursor:pointer;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+background:#f7f7f7;
+}
+
+.test-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.test-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.test-card h4{
+margin-top:15px;
+color:var(--gold);
+}
+/* NEWSLETTER */
+
+.newsletter{
+background:black;
+color:white;
+text-align:center;
+}
+
+.newsletter p{
+margin:20px 0;
+}
+
+.newsletter form{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:20px;
+}
+
+.newsletter input{
+padding:15px;
+width:350px;
+max-width:100%;
+border:none;
+border-radius:50px;
+}
+
+.newsletter button{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:var(--gold);
+font-weight:700;
+cursor:pointer;
+}
+
+/* CONTACT */
+
+.contact-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.contact-form button{
+padding:15px 30px;
+background:var(--gold);
+border:none;
+font-weight:700;
+cursor:pointer;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0a0a0a;
+color:white;
+padding:60px 8%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer-grid h3{
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.footer-grid p,
+.footer-grid a{
+color:#ccc;
+text-decoration:none;
+line-height:2;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #333;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-content h1{
+font-size:3rem;
+}
+
+.sale h2{
+font-size:2.5rem;
+}
+
+nav ul{
+position:fixed;
+top:80px;
+right:-100%;
+background:black;
+width:260px;
+height:100vh;
+flex-direction:column;
+padding:40px;
+transition:.5s;
+}
+
+nav ul.active{
+right:0;
+}
+
+.menu-btn{
+display:block;
+}
+
+.cart{
+width:100%;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="loader">
+<h1>RJM FASHION</h1>
+</div>
+
+<header>
+
+<div class="logo">RJM FASHION</div>
+
+<nav>
+<ul id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#sale">Sale</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="icons">
+
+<div class="cart-icon">
+<i class="fas fa-shopping-bag" onclick="openCart()"></i>
+<span class="cart-count" id="count">0</span>
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+</div>
+
+</header>
+
+<div class="cart" id="cart">
+
+<span class="close-cart" onclick="closeCart()">×</span>
+
+<h2>Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<div class="total">
+Total ₹<span id="total">0</span>
+</div>
+
+<a href="#" class="whatsapp-btn" id="whatsappOrder">
+Order on WhatsApp
+</a>
+
+</div>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Luxury Fashion Redefined</h1>
+
+<p>
+Discover premium collections crafted for modern style,
+comfort and confidence.
+</p>
+
+<a href="#products" class="btn">
+Shop Collection
+</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Why Choose RJM FASHION
+</h2>
+
+<div class="features">
+
+<div class="feature-box">
+<i class="fas fa-truck"></i>
+<h3>Fast Delivery</h3>
+<p>Quick delivery across India.</p>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-award"></i>
+<h3>Premium Quality</h3>
+<p>High quality fashion products.</p>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-undo"></i>
+<h3>Easy Returns</h3>
+<p>Simple replacement process.</p>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-lock"></i>
+<h3>Secure Payment</h3>
+<p>Safe and secure transactions.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="products">
+
+<h2 class="section-title">
+Trending Collection
+</h2>
+
+<div class="products">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Elegant Dress</h3>
+
+<div class="price">₹1999</div>
+
+<button class="add-btn"
+onclick="addToCart('Elegant Dress',1999)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Premium T-Shirt</h3>
+
+<div class="price">₹899</div>
+
+<button class="add-btn"
+onclick="addToCart('Premium T-Shirt',899)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Luxury Shoes</h3>
+
+<div class="price">₹2499</div>
+
+<button class="add-btn"
+onclick="addToCart('Luxury Shoes',2499)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Designer Outfit</h3>
+
+<div class="price">₹3499</div>
+
+<button class="add-btn"
+onclick="addToCart('Designer Outfit',3499)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="sale" id="sale">
+<div>
+<h2>UP TO 50% OFF</h2>
+<p>Exclusive Fashion Sale Collection</p>
+<br>
+<a href="#products" class="btn">Shop Sale</a>
+</div>
+</section>
+
+<section class="testimonials">
+
+<h2 class="section-title">
+Customer Reviews
+</h2>
+
+<div class="test-grid">
+
+<div class="test-card">
+<p>
+★★★★★
+Amazing quality and fast delivery.
+The clothes look premium.
+</p>
+<h4>Rahul Sharma</h4>
+</div>
+
+<div class="test-card">
+<p>
+★★★★★
+Best fashion website I've ordered from.
+Excellent service.
+</p>
+<h4>Priya Verma</h4>
+</div>
+
+<div class="test-card">
+<p>
+★★★★★
+Stylish products and perfect fitting.
+Highly recommended.
+</p>
+<h4>Arjun Patel</h4>
+</div>
+
+</div>
+
+</section>
+
+<section class="newsletter">
+
+<h2>Join RJM FASHION Club</h2>
+
+<p>
+Get exclusive discounts and new arrivals first.
+</p>
+
+<form>
+<input type="email" placeholder="Enter your email">
+<button type="submit">
+Subscribe
+</button>
+</form>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">
+Contact Us
+</h2>
+
+<div class="contact-container">
+
+<div>
+
+<h3>RJM FASHION</h3>
+
+<br>
+
+<p>
+Premium clothing brand providing modern
+fashion for every occasion.
+</p>
+
+<br>
+
+<p>Email: contact@rjmfashion.com</p>
+
+<p>Phone: +91 9876543210</p>
+
+<p>Location: Mysuru, Karnataka</p>
+
+</div>
+
+<div class="contact-form">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="6"
+placeholder="Your Message"></textarea>
+
+<button>
+Send Message
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>RJM FASHION</h3>
+<p>
+Luxury fashion brand for modern lifestyle.
+</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="#home">Home</a></p>
+<p><a href="#products">Products</a></p>
+<p><a href="#sale">Sale</a></p>
+<p><a href="#contact">Contact</a></p>
+</div>
+
+<div>
+<h3>Support</h3>
+<p>Shipping Policy</p>
+<p>Returns & Refunds</p>
+<p>Privacy Policy</p>
+<p>Terms & Conditions</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 RJM FASHION. All Rights Reserved.
+</div>
+
+</footer>
+
+<script>
+
+let cart = [];
+let total = 0;
+
+function addToCart(name, price){
+
+cart.push({
+name,
+price
+});
+
+total += price;
+
+updateCart();
+
+}
+
+function updateCart(){
+
+const cartItems =
+document.getElementById("cartItems");
+
+cartItems.innerHTML = "";
+
+cart.forEach(item => {
+
+cartItems.innerHTML += `
+<div class="cart-item">
+<span>${item.name}</span>
+<span>₹${item.price}</span>
+</div>
+`;
+
+});
+
+document.getElementById("total").innerText = total;
+
+document.getElementById("count").innerText =
+cart.length;
+
+let message =
+"Hello RJM FASHION,%0A%0AI want to order:%0A";
+
+cart.forEach(item=>{
+message +=
+`${item.name} - ₹${item.price}%0A`;
+});
+
+message += `%0A Total: ₹${total}`;
+
+document.getElementById("whatsappOrder").href =
+`https://wa.me/919876543210?text=${message}`;
+
+}
+
+function openCart(){
+
+document
+.getElementById("cart")
+.classList.add("active");
+
+}
+
+function closeCart(){
+
+document
+.getElementById("cart")
+.classList.remove("active");
+
+}
+
+function toggleMenu(){
+
+document
+.getElementById("menu")
+.classList.toggle("active");
+
+}
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.querySelector(".loader")
+.style.display="none";
+
+},1500);
+
+});
+
+window.addEventListener("scroll",()=>{
+
+const header =
+document.querySelector("header");
+
+if(window.scrollY > 50){
+
+header.style.padding =
+"14px 8%";
+
+}else{
+
+header.style.padding =
+"18px 8%";
+
+}
+
+});
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform=
+"translateY(0)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll(
+".feature-box,.product,.test-card"
+).forEach(el=>{
+
+el.style.opacity="0";
+el.style.transform=
+"translateY(50px)";
+el.style.transition=
+"all 1s ease";
+
+observer.observe(el);
+
+});
+
+</script>
+
+</body>
+</html>
